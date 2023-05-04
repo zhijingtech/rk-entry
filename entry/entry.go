@@ -7,7 +7,7 @@ package rkentry
 
 import (
 	"context"
-	"github.com/golang-jwt/jwt/v4"
+	// "github.com/golang-jwt/jwt/v4"
 )
 
 const (
@@ -90,22 +90,22 @@ type Entry interface {
 	String() string
 }
 
-// SignerJwt interface which must be implemented for JWT signer
-type SignerJwt interface {
-	Entry
+// // SignerJwt interface which must be implemented for JWT signer
+// type SignerJwt interface {
+// 	Entry
 
-	// SignJwt sign jwt.Token
-	SignJwt(claim jwt.Claims) (string, error)
+// 	// SignJwt sign jwt.Token
+// 	SignJwt(claim jwt.Claims) (string, error)
 
-	// VerifyJwt verify jwt.Token
-	VerifyJwt(token string) (*jwt.Token, error)
+// 	// VerifyJwt verify jwt.Token
+// 	VerifyJwt(token string) (*jwt.Token, error)
 
-	// PubKey get public key
-	PubKey() []byte
+// 	// PubKey get public key
+// 	PubKey() []byte
 
-	// Algorithms supported algorithms
-	Algorithms() []string
-}
+// 	// Algorithms supported algorithms
+// 	Algorithms() []string
+// }
 
 type Crypto interface {
 	Entry

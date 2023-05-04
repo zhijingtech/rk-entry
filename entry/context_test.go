@@ -34,7 +34,7 @@ cert:
 	RegisterConfigEntryYAML(raw)
 	RegisterLoggerEntryYAML(raw)
 	RegisterEventEntryYAML(raw)
-	RegisterCertEntryYAML(raw)
+	// RegisterCertEntryYAML(raw)
 
 	assert.NotNil(t, GlobalAppCtx.GetConfigEntry("ut-config"))
 	assert.Nil(t, GlobalAppCtx.GetConfigEntry("ut-config-1"))
@@ -45,8 +45,8 @@ cert:
 	assert.NotNil(t, GlobalAppCtx.GetEventEntry("ut-event"))
 	assert.Nil(t, GlobalAppCtx.GetEventEntry("ut-event-1"))
 
-	assert.NotNil(t, GlobalAppCtx.GetCertEntry("ut-cert"))
-	assert.Nil(t, GlobalAppCtx.GetCertEntry("ut-cert-1"))
+	// assert.NotNil(t, GlobalAppCtx.GetCertEntry("ut-cert"))
+	// assert.Nil(t, GlobalAppCtx.GetCertEntry("ut-cert-1"))
 }
 
 func TestAppContext_RemoveEntryByType(t *testing.T) {

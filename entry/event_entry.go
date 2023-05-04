@@ -9,7 +9,7 @@ import (
 	"context"
 	"crypto/tls"
 	"encoding/json"
-	"github.com/rookie-ninja/rk-entry/v2/middleware"
+	// "github.com/rookie-ninja/rk-entry/v2/middleware"
 	"github.com/rookie-ninja/rk-logger"
 	"github.com/rookie-ninja/rk-query"
 	"go.uber.org/zap"
@@ -122,7 +122,7 @@ func RegisterEventEntry(boot *BootEvent) []*EventEntry {
 
 			// default labels
 			opts = append(opts,
-				rklogger.WithLokiLabel(rkmid.Domain.Key, rkmid.Domain.String),
+				// rklogger.WithLokiLabel(rkmid.Domain.Key, rkmid.Domain.String),
 				rklogger.WithLokiLabel("app_name", GlobalAppCtx.GetAppInfoEntry().AppName),
 				rklogger.WithLokiLabel("app_version", GlobalAppCtx.GetAppInfoEntry().Version),
 				rklogger.WithLokiLabel("logger_type", "event"),

@@ -36,7 +36,7 @@ var (
 		RegisterLoggerEntryYAML,
 		RegisterEventEntryYAML,
 		RegisterConfigEntryYAML,
-		RegisterCertEntryYAML,
+		// RegisterCertEntryYAML,
 	}
 	pluginRegFuncList   = make([]RegFunc, 0)
 	webFrameRegFuncList = make([]RegFunc, 0)
@@ -321,15 +321,15 @@ func (ctx *appContext) GetEventEntryDefault() *EventEntry {
 	return res
 }
 
-func (ctx *appContext) GetCertEntry(entryName string) *CertEntry {
-	entries := ctx.entries[CertEntryType]
+// func (ctx *appContext) GetCertEntry(entryName string) *CertEntry {
+// 	entries := ctx.entries[CertEntryType]
 
-	if v, ok := entries[entryName]; ok {
-		return v.(*CertEntry)
-	}
+// 	if v, ok := entries[entryName]; ok {
+// 		return v.(*CertEntry)
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
 func (ctx *appContext) AddEntry(entry Entry) {
 	if entry == nil {
@@ -383,15 +383,15 @@ func (ctx *appContext) ListEntries() map[string]map[string]Entry {
 	return ctx.entries
 }
 
-func (ctx *appContext) GetSignerJwtEntry(entryName string) SignerJwt {
-	if v := ctx.GetEntry(SignerJwtEntryType, entryName); v != nil {
-		if res, ok := v.(SignerJwt); ok {
-			return res
-		}
-	}
+// func (ctx *appContext) GetSignerJwtEntry(entryName string) SignerJwt {
+// 	if v := ctx.GetEntry(SignerJwtEntryType, entryName); v != nil {
+// 		if res, ok := v.(SignerJwt); ok {
+// 			return res
+// 		}
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
 func (ctx *appContext) GetCryptoEntry(entryName string) Crypto {
 	if v := ctx.GetEntry(CryptoEntryType, entryName); v != nil {
