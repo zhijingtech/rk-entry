@@ -3,7 +3,7 @@ module github.com/rookie-ninja/rk-entry/v2
 go 1.18
 
 require (
-	github.com/mitchellh/mapstructure v1.5.0
+	github.com/mitchellh/mapstructure v1.4.3
 	github.com/rookie-ninja/rk-logger v1.2.13
 	github.com/rookie-ninja/rk-query v1.2.14
 	github.com/spf13/pflag v1.0.5
