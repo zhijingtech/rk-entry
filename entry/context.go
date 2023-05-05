@@ -35,7 +35,7 @@ var (
 		registerAppInfoEntryYAML,
 		RegisterLoggerEntryYAML,
 		RegisterEventEntryYAML,
-		RegisterConfigEntryYAML,
+		// RegisterConfigEntryYAML,
 		// RegisterCertEntryYAML,
 	}
 	pluginRegFuncList   = make([]RegFunc, 0)
@@ -257,15 +257,15 @@ func (ctx *appContext) GetAppInfoEntry() *appInfoEntry {
 	return ctx.appInfoEntry
 }
 
-func (ctx *appContext) GetConfigEntry(entryName string) *ConfigEntry {
-	entries := ctx.entries[ConfigEntryType]
+// func (ctx *appContext) GetConfigEntry(entryName string) *ConfigEntry {
+// 	entries := ctx.entries[ConfigEntryType]
 
-	if v, ok := entries[entryName]; ok {
-		return v.(*ConfigEntry)
-	}
+// 	if v, ok := entries[entryName]; ok {
+// 		return v.(*ConfigEntry)
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
 func (ctx *appContext) GetLoggerEntry(entryName string) *LoggerEntry {
 	entries := ctx.entries[LoggerEntryType]

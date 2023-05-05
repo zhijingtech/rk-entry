@@ -31,13 +31,13 @@ cert:
   - name: ut-cert
 `
 	raw := []byte(bootStr)
-	RegisterConfigEntryYAML(raw)
+	// RegisterConfigEntryYAML(raw)
 	RegisterLoggerEntryYAML(raw)
 	RegisterEventEntryYAML(raw)
 	// RegisterCertEntryYAML(raw)
 
-	assert.NotNil(t, GlobalAppCtx.GetConfigEntry("ut-config"))
-	assert.Nil(t, GlobalAppCtx.GetConfigEntry("ut-config-1"))
+	// assert.NotNil(t, GlobalAppCtx.GetConfigEntry("ut-config"))
+	// assert.Nil(t, GlobalAppCtx.GetConfigEntry("ut-config-1"))
 
 	assert.NotNil(t, GlobalAppCtx.GetLoggerEntry("ut-logger"))
 	assert.Nil(t, GlobalAppCtx.GetLoggerEntry("ut-logger-1"))
@@ -49,21 +49,21 @@ cert:
 	// assert.Nil(t, GlobalAppCtx.GetCertEntry("ut-cert-1"))
 }
 
-func TestAppContext_RemoveEntryByType(t *testing.T) {
-	defer GlobalAppCtx.clearEntries()
+// func TestAppContext_RemoveEntryByType(t *testing.T) {
+// 	defer GlobalAppCtx.clearEntries()
 
-	bootStr := `
----
-config:
-  - name: ut-config
-`
-	raw := []byte(bootStr)
-	RegisterConfigEntryYAML(raw)
+// 	bootStr := `
+// ---
+// config:
+//   - name: ut-config
+// `
+// 	raw := []byte(bootStr)
+// 	RegisterConfigEntryYAML(raw)
 
-	assert.Len(t, GlobalAppCtx.ListEntriesByType(ConfigEntryType), 1)
-	GlobalAppCtx.RemoveEntryByType(ConfigEntryType)
-	assert.Empty(t, GlobalAppCtx.ListEntriesByType(ConfigEntryType))
-}
+// 	assert.Len(t, GlobalAppCtx.ListEntriesByType(ConfigEntryType), 1)
+// 	GlobalAppCtx.RemoveEntryByType(ConfigEntryType)
+// 	assert.Empty(t, GlobalAppCtx.ListEntriesByType(ConfigEntryType))
+// }
 
 func TestGlobalAppCtx_init(t *testing.T) {
 	assert.NotNil(t, GlobalAppCtx)
